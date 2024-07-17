@@ -1,0 +1,19 @@
+<html>
+
+<head>
+  {% include 'basehead.html' %}
+</head>
+
+<body>
+  {% include 'base.html' %}
+  <h1>Contacto (Model)</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <div class="form-actions">
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+</body>
+
+</html>
