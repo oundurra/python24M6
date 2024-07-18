@@ -1,11 +1,29 @@
 <html>
-    <head>
-        {% include 'basehead.html' %}
-    </head>
-    <body>
-        {% include 'base.html' %}
-        <script>
-            document.getElementById("contenido").innerHTML = "<h1>CONTENIDO DE INICIO</h1>";
-        </script>
-    </body>
+
+<head>
+    {% include 'basehead.html' %}
+</head>
+
+<body>
+    {% include 'base.html' %}
+    <script>
+        document.getElementById("contenido").innerHTML = "<h1>Flanes</h1>";
+    </script>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for flan in flans %}
+        <div class="col">
+            <div class="card">
+                <img src="{{ flan.flan_image_url }}" class="card-img-top" alt="..." height="300px">
+                <div class="card-body">
+                    <h5 class="card-title">{{ flan.flan_name }}</h5>
+                    <p class="card-text">{{ flan.flan_description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
 </html>

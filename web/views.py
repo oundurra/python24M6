@@ -1,14 +1,15 @@
 from django.shortcuts import render, reverse, redirect, HttpResponseRedirect
 from django.views.generic import FormView
 from .forms import ContactFormModel, ContactForm
-from .models import Contact
+from .models import Contact, Flan
 
 # Create your views here.
 def exito(request):
     return render(request, 'exito.html', {})
 
 def index(request):
-    return render(request, 'index.html', {})
+    flans = Flan.objects.all()
+    return render(request, 'index.html', {'flans': flans})
 
 def about(request):
     return render(request, 'about.html', {})
