@@ -6,8 +6,9 @@
 
 <body>
     {% include 'base.html' %}
+
     <script>
-        document.getElementById("contenido").innerHTML = "<h1>Flanes</h1>";
+        document.getElementById("contenido").innerHTML = "<h2>Bienvenido Usuario {{user.get_username|upper}}</h2>";
     </script>
 
     <div class="row row-cols-1 row-cols-md-3 g-4">

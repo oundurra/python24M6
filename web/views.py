@@ -2,8 +2,10 @@ from django.shortcuts import render, reverse, redirect, HttpResponseRedirect
 from django.views.generic import FormView
 from .forms import ContactFormModel, ContactForm
 from .models import Contact, Flan
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
 def exito(request):
     return render(request, 'exito.html', {})
 
@@ -11,6 +13,7 @@ def index(request):
     flans = Flan.objects.all()
     return render(request, 'index.html', {'flans': flans})
 
+@login_required
 def about(request):
     return render(request, 'about.html', {})
 
